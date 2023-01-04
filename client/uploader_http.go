@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/broderickhyman/albiondata-client/lib"
 	"github.com/broderickhyman/albiondata-client/log"
 )
 
@@ -25,7 +26,10 @@ func newHTTPUploader(url string) uploader {
 func (u *httpUploader) sendToIngest(body []byte, topic string) {
 	client := &http.Client{Transport: u.transport}
 
-	fullURL := u.baseURL + "/" + topic
+	fullURL := u.baseURL + "/orders"
+	if topic != lib.NatsMarketOrdersIngest {
+		return
+	}
 
 	req, err := http.NewRequest("POST", fullURL, bytes.NewBuffer([]byte(body)))
 	if err != nil {

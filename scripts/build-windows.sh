@@ -26,7 +26,7 @@ export GOARCH=amd64
 export CGO_ENABLED=1
 export CXX=x86_64-w64-mingw32-g++
 export CC=x86_64-w64-mingw32-gcc
-go build -ldflags "-s -w -X main.version=$GITHUB_REF_NAME" -o albiondata-client.exe -v -x albiondata-client.go
+go build -ldflags "-s -w -X main.version=1.1.0" -o albiondata-client.exe -v -x albiondata-client.go
 
 # Add icon to the .exe
 wine thirdparty/rcedit/rcedit.exe albiondata-client.exe --set-icon icon/albiondata-client.ico

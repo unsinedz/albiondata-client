@@ -38,7 +38,7 @@ type config struct {
 	NoCPULimit                     bool
 }
 
-//config global config data
+// config global config data
 var ConfigGlobal = &config{
 	LogLevel: "INFO",
 }
@@ -71,6 +71,9 @@ func (config *config) setupWebsocketFlags() {
 	if err != nil {
 		viper.Set("EnableWebsockets", false)
 	}
+
+	// force disable WS
+	viper.Set("EnableWebsockets", false)
 
 	config.EnableWebsockets = viper.GetBool("EnableWebsockets")
 	config.AllowedWSHosts = viper.GetStringSlice("AllowedWebsocketHosts")
@@ -167,7 +170,8 @@ func (config *config) setupCommonFlags() {
 	flag.StringVar(
 		&config.PublicIngestBaseUrls,
 		"i",
-		"http+pow://www.albion-online-data.com:4223",
+		"http://localhost",
+		// "fs://F:/Projects/AlbionClientPuller/albiondata-client/output/data{0}.json",
 		"Base URL to send PUBLIC data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders. Comma separated.",
 	)
 
