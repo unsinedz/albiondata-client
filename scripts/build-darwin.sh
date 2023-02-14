@@ -32,7 +32,7 @@ chmod -v 777 ./$TEMP/*
 zip -v ../$ZIPNAME -r ./"$TEMP"
 
 # In theory the following works to create an app but there was a permissions issue when opening on the mac
-# APP_NAME="Albion Data Client"
+# APP_NAME="Albion Private Prices Client"
 # TEMP="$APP_NAME".app
 # ZIPNAME="albiondata-client-amd64-mac.zip"
 

@@ -150,7 +150,7 @@ Section $(TEXT_SecBase) SecBase
   CreateShortCut "$DESKTOP\${PACKAGE_NAME}.lnk" "$INSTDIR\${PACKAGE_EXE}"
 
 ; Create Task to run the Client as Admin on Logon
-  Exec 'c:\Windows\System32\schtasks.exe /Create /F /SC ONLOGON /RL HIGHEST /TN "Albion Data Client" /TR "\"$INSTDIR\albiondata-client.exe\" -minimize"'
+  Exec 'c:\Windows\System32\schtasks.exe /Create /F /SC ONLOGON /RL HIGHEST /TN "Albion Private Prices Client" /TR "\"$INSTDIR\albiondata-client.exe\" -minimize"'
 
 SectionEnd
 
@@ -243,7 +243,7 @@ Section "Uninstall"
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGE_NAME}"
 
 ; Task
-  Exec 'c:\Windows\System32\schtasks.exe /Delete /TN "Albion Data Client" /F'
+  Exec 'c:\Windows\System32\schtasks.exe /Delete /TN "Albion Private Prices Client" /F'
 
 SectionEnd
 

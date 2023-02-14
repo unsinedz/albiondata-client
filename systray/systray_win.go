@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package systray
@@ -63,10 +64,10 @@ func onReady() {
 		hideConsole()
 	}
 	systray.SetIcon(icon.Data)
-	systray.SetTitle("Albion Data Client")
-	systray.SetTooltip("Albion Data Client")
+	systray.SetTitle("Albion Private Prices Client")
+	systray.SetTooltip("Albion Private Prices Client")
 	mConHideShow := systray.AddMenuItem(GetActionTitle(), "Show/Hide Console")
-	mQuit := systray.AddMenuItem("Quit", "Close the Albion Data Client")
+	mQuit := systray.AddMenuItem("Quit", "Close the Albion Private Prices Client")
 
 	func() {
 		for {

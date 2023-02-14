@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package notification
@@ -8,7 +9,7 @@ import (
 )
 
 func Push(msg string) {
-	note := toast.Notification{AppID: "Albion Data Client", Title: "Albion Data Client", Message: msg}
+	note := toast.Notification{AppID: "Albion Private Prices Client", Title: "Albion Private Prices Client", Message: msg}
 
 	err := note.Push()
 	if err != nil {

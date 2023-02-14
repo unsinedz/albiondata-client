@@ -1,3 +1,4 @@
+//go:build linux || darwin
 // +build linux darwin
 
 package notification
@@ -5,5 +6,5 @@ package notification
 import "github.com/ctcpip/notifize"
 
 func Push(msg string) {
-	notifize.Display("Albion Data Client", msg, false, "")
+	notifize.Display("Albion Private Prices Client", msg, false, "")
 }
