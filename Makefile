@@ -11,7 +11,7 @@ validate-fmt:
 	scripts/validate-fmt.sh
 
 build-windows:
-	cmd /c .\scripts\build-windows.sh
+	cmd /c .\scripts\build-windows.cmd
 
 build-linux:
 	scripts/build-linux.sh
